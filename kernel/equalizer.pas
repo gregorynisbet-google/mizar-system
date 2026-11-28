@@ -3379,8 +3379,12 @@ Next:
            lt1:=FuncArgs^.XTrmPtr; lt2:=FuncArgs^.NextTrm^.XTrmPtr;
            lTrmInfo:=TrmS[TrmInfo].Term^.TrmInfo;
            if Trms[lt2^.TrmInfo].NumValue.Determined then
-             if IsEqWithInt(Trms[lt1^.TrmInfo].NumValue.NumericValue,1) then
+             if IsEqWithInt(Trms[lt2^.TrmInfo].NumValue.NumericValue,1) then
+              begin
                UnionTrms(lTrmInfo,lt1^.TrmInfo);
+               if Contr > 0 then exit;
+               lTrmInfo:=TrmS[TrmInfo].Term^.TrmInfo;
+              end;
            IntDiv(Trms[lt1^.TrmInfo].NumValue,Trms[lt2^.TrmInfo].NumValue,lVal);
            if lVal.Determined then
            begin
