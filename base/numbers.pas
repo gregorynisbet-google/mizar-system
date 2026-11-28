@@ -360,6 +360,7 @@ begin
    writeln(infofile,'_Div(',a,',',b,')');
    {$ENDIF}
    checkzero(a,b);
+   if b='0' then _div:='0' else
    if a=b then _div:='1' else
    if not _leq(b,a) then _div:='0' else
    begin
@@ -430,6 +431,7 @@ var a1,b1,r:string;
    {$ENDIF}
     checkzero(a1,b1);
     a1:=abs(a1);b1:=abs(b1);
+    if (a1='0') or (b1='0') then r:='0' else
     r:=Diva(Mul(a1,b1),GCD(a1,b1));
     LCM:=r;
    {$IFDEF DEBUGNUM}
