@@ -404,7 +404,6 @@ begin SchWidennings:=false;
          StructConstrPtr( Constr[ coStructMode].Items^[lTyp^.ModNr])^.fFields^)
     then
      begin
-      SchWidennings:=true;
       gWidStruct.Init(0,5);
       gWidStructFound:=false; gTargetStructNr:=ModNr;
       WidenningPath(lTyp^.ModNr);
