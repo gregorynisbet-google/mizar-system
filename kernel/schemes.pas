@@ -303,7 +303,8 @@ begin SchEqFrm:=false;
    end;
    ikFrmFlexConj: SchEqFrm:=
      SchEqFrm(FlexFrmPtr(fFrm1)^.nLeftOrigFrm,FlexFrmPtr(fFrm2)^.nLeftOrigFrm) and
-     SchEqFrm(FlexFrmPtr(fFrm1)^.nRightOrigFrm,FlexFrmPtr(fFrm2)^.nRightOrigFrm);
+     SchEqFrm(FlexFrmPtr(fFrm1)^.nRightOrigFrm,FlexFrmPtr(fFrm2)^.nRightOrigFrm) and
+     SchEqFrm(FlexFrmPtr(fFrm1)^.nExpansion,FlexFrmPtr(fFrm2)^.nExpansion);
    ikError: SchEqFrm:=true;
    else RunTimeError(2449);
   end
